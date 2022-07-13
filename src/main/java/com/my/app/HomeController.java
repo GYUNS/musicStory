@@ -35,4 +35,10 @@ public class HomeController {
 		return mv;
 		} // main
 	
+	@RequestMapping(value = "/joinus")
+	public ModelAndView joinus(ModelAndView mv) {
+		mv.setViewName("main/joinus");
+		return mv;
+		} // joinus
+	
 }
