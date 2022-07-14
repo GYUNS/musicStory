@@ -41,4 +41,10 @@ public class HomeController {
 		return mv;
 		} // joinus
 	
+	@RequestMapping(value = "/popup")
+	public ModelAndView popup(ModelAndView mv) {
+		mv.setViewName("popup");
+		return mv;
+		} // joinus
+	
 }
