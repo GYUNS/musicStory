@@ -9,7 +9,7 @@
 <style>
 	* { margin: 0; padding: 0; border: 0; }
 	html{height: 100%;}
-	body { background-color: 	#AFEEEE; }
+	body { background-image:url("resources/images/main_background.jpg"); }
   		   
 	#logo { text-align:center;
 		    font-size:5rem;}

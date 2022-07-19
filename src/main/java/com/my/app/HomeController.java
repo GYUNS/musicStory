@@ -45,6 +45,12 @@ public class HomeController {
 	public ModelAndView popup(ModelAndView mv) {
 		mv.setViewName("popup");
 		return mv;
-		} // joinus
+		} // popup
+	
+	@RequestMapping(value = "/write")
+	public ModelAndView write(ModelAndView mv) {
+		mv.setViewName("board/write");
+		return mv;
+		} // write
 	
 }
