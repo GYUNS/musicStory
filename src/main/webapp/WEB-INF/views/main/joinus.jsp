@@ -86,7 +86,7 @@
 <body>
 <div id="logo"><b><a href="main">Join Us</a></b></div>
 <div id="container">
-	<form action="#" method="get">
+	<form action="join" method="post">
 	<fieldset>
 		<div>
 			<span class="contentName">아이디</span> <br>
@@ -106,8 +106,9 @@
 		</div>
 		<div>
 			<span class="contentName">생년월일</span> <br>
-			<input class="birth" type="text" name="birthYear" maxlength="4" placeholder="년(4자)"> 
-			<select class="birth" name="birthMonth" >
+			<input type="date" name="birth">
+	<!-- 		<input class="birth" type="text" name="birthYear" maxlength="4" placeholder="년(4자)"> 
+			<select class="birth" name="birth" >
 				<option value="월">월</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -122,7 +123,7 @@
 				<option value="11">11</option>
 				<option value="12">12</option>
 			</select>
-			<input class="birth" name="birthDay" type="text"  maxlength="2" placeholder="일")> 
+			<input class="birth" name="birthDay" type="text"  maxlength="2" placeholder="일")>  -->
 		</div>
 		<div class="radio_box">  
 			<span class="contentName">성별</span>
@@ -130,7 +131,7 @@
 			<input  type="radio" name="gender" value="m" id="male"><label for="male">남성</label>
 		</div>
 		</fieldset>	
-		<input class="join" type="submit" value="가입하기">
+		<input type="submit" class="join" value="가입하기">
 	</form>
 	
 	<!-- 모달창 input에 입력하기 -->
@@ -138,7 +139,7 @@
 	<div class="modal hidden">
 	  <div class="bg"></div>
 	  <div class="modalBox">
-		  <p align="center"> 축하합니다. MusicStory에 가입되었습니다
+		  <p align="center"> 정말 가입하시겠습니까!?!
 		    <button class="closeBtn">✖</button>
 	  </div> 
 	</div> <!-- modal hidden -->

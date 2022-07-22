@@ -307,7 +307,7 @@
 </main>
 
 <footer>
-	<marquee width="100%" direction="left" loop="-1" scrolldelay="10" bgcolor="dimgray">
+	<marquee width="100%" direction="left" scrolldelay="10" bgcolor="dimgray">
 		<span id="footer_m">
 			<image src="resources/images/marquee1.jpg">
 			<image src="resources/images/marquee2.jpg">
