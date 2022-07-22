@@ -13,6 +13,11 @@ public class MemberServiceImpl implements MemberService{
 	MemberMapper mapper;
 	
 	@Override
+	public MemberVO selectOne(MemberVO vo) {
+		return mapper.selectOne(vo);
+	}
+	
+	@Override
 	public int insert(MemberVO vo) {
 		return mapper.insert(vo);
 	}

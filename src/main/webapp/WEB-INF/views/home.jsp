@@ -70,6 +70,11 @@
  	pointer-events:none
 	}
 	
+	/* 그림 호버시 이미지 효과  */
+	.lecord:hover {
+		transform: scale(1.4);
+	}
+	
 	</style>
 </head>
 <body>
@@ -78,7 +83,7 @@
 	<div class="circle"></div>
 
 	<div class="wrap">
-		<a href="main"><img width="350px" height="200px" alt="LP판" 
+		<a href="main"><img class="lecord" "width="350px" height="200px" alt="LP판" 
 		src="resources/images/disc-jockey-1293238_640.png"></a>
 		<figcaption>음악 공유하러 클릭하기!</figcaption>
 	</div>
@@ -86,7 +91,7 @@
 </body>
 <script>
 /* 팝업창 */
-	window.open("popup","naver","width=450px, height=450px, left=200px, top=20px, scrollbars=no, toolbar=no, location=no");
+	window.open("popup","music","width=500px, height=450px, left=200px, top=20px, scrollbars=no, toolbar=no, location=no");
 
 /* 마우스 이벤트  */
 	const circle = document.querySelector(".circle");

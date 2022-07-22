@@ -3,34 +3,84 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 <script src="resources/myLib/jquery-3.2.1.min.js"></script>
 <meta charset="UTF-8">
 <title>** Music Story **</title>
 <style>
 	* { margin: 0; padding: 0; border: 0; }
 	html{height: 100%;}
-	body { background-image:url("resources/images/main_background.jpg"); }
-  		   
-	#logo { text-align:center;
-		    font-size:5rem;}
-		   
-	#logo a {text-decoration: none;
-			color:#6495ED;}	   
-		   
-	#container { margin: 0 auto; width: 600px;
-				 border:3px solid blue;
-				 border-radius: 30px 30px 30px 30px;
-				 padding:10px;
-				 line-height:30px;
-				 background-color:	#E0FFFF;}
-	.contentName { font-size: 1.2rem;}
-	input { border-radius: 15px 15px 15px 15px; width: 600px; height: 50px; border: 2px solid lightgray; font-size: 15px }			 
-	.select { width: 600px; height: 50px; ; font-size: 15px; border: 2px solid lightgray;}
-	.birth { border-radius: 15px 15px 15px 15px; width: 190px; height: 50px; border: 2px solid lightgray; }
-	.tech { height: 110px; }
+	body { 
+		font-family: 'Dongle', sans-serif;	
+	}
 	
-	#male, #female { width:50px; height: 15px;}
-	.radio_box	{ display: inline-block; }
+	body::after{
+		width:100%;
+		height:100%;
+		content:"";
+		background-image: url("resources/images/main_background.jpg");
+		opacity: 0.6;
+		position:absolute;
+		top:0; left:0;
+		z-index:-1;
+	}
+
+
+  	/* 타이틀  */	   
+	#logo { 
+		text-align:center;
+		font-size:125px;
+	}
+		   
+	#logo a {
+		text-decoration: none;
+		color:#6495ED;
+	}	   
+	
+	/* 회원가입창  */		   
+	
+	#container { 
+		margin: 0 auto; width: 600px;
+		border-radius: 30px 30px 30px 30px;
+	    padding:10px;
+	    line-height:30px;
+	    background-color:	#123456;
+    }
+	.contentName { 
+		font-size: 30px;
+		color:#6495ED;
+	}
+	input { 
+		border-radius: 15px 15px 15px 15px; 
+		width: 600px; height: 50px; 
+		border: 2px solid lightgray; 
+		font-size: 15px 
+	}			 
+
+	input[type=date] {
+		font-size:50px;
+		font-family: 'Dongle', sans-serif;	
+		text-align:center;
+	}
+	
+	#male, #female { 
+		width:50px; height: 15px;
+		
+	}
+	.radio_box	{ 
+		display: inline-block;
+		font-size:30px; 
+		color:#6495ED;
+	}
+	
+	input[type=submit] {
+		color:#6495ED;
+		font-size:20px;
+		cursor: pointer;
+		font-weight:bold;
+	}
 	
 	/* 모달창 가져오기  */
 	 button {
@@ -84,67 +134,52 @@
 
 </head>
 <body>
-<div id="logo"><b><a href="main">Join Us</a></b></div>
-<div id="container">
-	<form action="join" method="post">
-	<fieldset>
-		<div>
-			<span class="contentName">아이디</span> <br>
-			<input type="text" name="id" maxlength="15" placeholder="15글자 이내로 입력하세요."> <br>
-		</div>
-		<div>
-			<span class="contentName">비밀번호</span> <br>
-			<input type="password" name="password"; maxlength="20" placeholder="소문자,대문자,특수문자가 모두 포함되어야합니다.">
-		</div>
-		<div>
-			<span class="contentName">비밀번호 재확인</span> <br>
-			<input type="text" name="passwordCheck" maxlength="20" >
-		</div>
-		<div>
-			<span class="contentName">이름</span> <br>
-			<input type="text" name="name" maxlength="15" >
-		</div>
-		<div>
-			<span class="contentName">생년월일</span> <br>
-			<input type="date" name="birth">
-	<!-- 		<input class="birth" type="text" name="birthYear" maxlength="4" placeholder="년(4자)"> 
-			<select class="birth" name="birth" >
-				<option value="월">월</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
-			</select>
-			<input class="birth" name="birthDay" type="text"  maxlength="2" placeholder="일")>  -->
-		</div>
-		<div class="radio_box">  
-			<span class="contentName">성별</span>
-			<input  type="radio" name="gender" value="f" checked id="female"><label for="female">여성</label>&nbsp;&nbsp; 
-			<input  type="radio" name="gender" value="m" id="male"><label for="male">남성</label>
-		</div>
-		</fieldset>	
-		<input type="submit" class="join" value="가입하기">
-	</form>
+<div id="background">
+	<div id="logo"><b><a href="main">play</a></b></div>
+	<div id="container">
+		<form action="join" method="post">
+		<fieldset>
+			<div>
+				<span class="contentName">아이디</span> <br>
+				<input type="text" name="id" maxlength="15" placeholder="15글자 이내로 입력하세요."> <br>
+			</div>
+			<div>
+				<span class="contentName">비밀번호</span> <br>
+				<input type="password" name="password"; maxlength="20" placeholder="소문자,대문자,특수문자가 모두 포함되어야합니다.">
+			</div>
+			<div>
+				<span class="contentName">비밀번호 재확인</span> <br>
+				<input type="password" name="passwordCheck" maxlength="20" >
+			</div>
+			<div>
+				<span class="contentName">이름</span> <br>
+				<input type="text" name="name" maxlength="15" placeholder="15글자 이내로 지어주세요" >
+			</div>
+			<div>
+				<span class="contentName">생년월일</span> <br>
+				<input type="date" name="birth">
+			</div>
+			<div class="radio_box">  
+				<span class="contentName">성별</span>
+				<input  type="radio" name="gender" value="f" checked id="female"><label for="female">여성</label>&nbsp;&nbsp; 
+				<input  type="radio" name="gender" value="m" id="male"><label for="male">남성</label>
+			</div>
+			</fieldset>	
+			<input type="submit" class="join" value="가입하기">
+		</form>
+		
+		<!-- 모달창 input에 입력하기 -->
+		
+		<div class="modal hidden">
+		  <div class="bg"></div>
+		  <div class="modalBox">
+			  <p align="center"> 정말 가입하시겠습니까!?!
+			    <button class="closeBtn">✖</button>
+		  </div> 
+		</div> <!-- modal hidden -->
 	
-	<!-- 모달창 input에 입력하기 -->
-	
-	<div class="modal hidden">
-	  <div class="bg"></div>
-	  <div class="modalBox">
-		  <p align="center"> 정말 가입하시겠습니까!?!
-		    <button class="closeBtn">✖</button>
-	  </div> 
-	</div> <!-- modal hidden -->
-
-</div>
+	</div>
+</div><!-- background -->
 </body>
 <script>
 	const open = () => {

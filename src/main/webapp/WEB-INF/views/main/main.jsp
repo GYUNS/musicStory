@@ -1,15 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"	prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 <script src="resources/myLib/jquery-3.2.1.min.js"></script>
 <meta charset="UTF-8">
 <title>** Music Story **</title>
 <style>
 	*{margin:0;padding:0;}
-	body { margin:0 auto;}
+	body { 
+	margin:0 auto;
+	font-family: 'Dongle', sans-serif;		
+	}
 	
 	/* header  */
 	header {
@@ -31,6 +38,7 @@
 	}
 	
 	#title {
+		font-size:80px; 
 		text-decoration: none;
 	}
 	
@@ -43,14 +51,14 @@
 		margin: 0px 30px 0px 0px;
 	}
 	header ul li { 
-	 	font-size:2rem;			
+	 	font-size:50px;			
 	 	font-weight:bold;
 		float:left;
 		margin: 20px;
 	}
 
 	header ul li:hover {
-		font-size:2.2rem;
+		font-size:55px;
 		background-color:#87CEFA;
 		color:#123456;
 		cursor:pointer;
@@ -139,7 +147,7 @@
     }
     
     .text-field {
-        font-size: 14px;
+        font-size: 20px;
         padding: 10px;
         border: none;
         width: 250px;
@@ -149,7 +157,7 @@
  	 }
  
 	.submit-btn {
-	 	font-size: 14px;
+	 	font-size: 20px;
 	 	border: none;
 	  	padding: 10px;
 	  	width: 250px;
@@ -161,13 +169,14 @@
 	 
 	.join {
 	  	position: absolute;
-	  	left:190px; top:170px;
+	  	left:180px; top:170px;
       	text-align: center;
 	 }
 	 
 	.join a {
-	  	font-size: 2rem;
+	  	font-size: 40px;
 	  	color: #FFFAFA;
+	  	text-decoration: none;
 	}
 	
 	/* Main 2 table  */
@@ -217,7 +226,6 @@
 </style>
 </head>	
 <body>
-
 <header>
 	<h1><a href="main" id="title"> Music Story </a></h1>
 		<nav>
@@ -281,7 +289,9 @@
 		      		<tr height="30" bgcolor="#ffffff"><td>10</td></tr>
 		      	</table>
 			      	<div class="new_write">
-			      		<a href="write">글쓰기</a>
+				      	<c:if test="${not empty LoginID}">
+							&nbsp;&nbsp; <a href="write">글쓰기</a>
+						</c:if>
 			      	</div>
 		      	</div><!-- 자유게시판  -->
 		      <div class="item" id="item_3">
