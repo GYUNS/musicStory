@@ -243,14 +243,25 @@
 		  <div class="item"	id= item>
 		  	 <div class="login-form">
 		  	 	<div class="login-box">
-				    <form>
-				      <input type="text" name="email" class="text-field" placeholder="아이디"><br>
-				      <input type="password" name="password" class="text-field" placeholder="비밀번호">
+		  	 	<!-- MemberController 로 아이디랑 비밀번호 보내기  -->
+				    <form name=form action="login" method="post">
+				      <input type="text" id="id" name="id" class="text-field" placeholder="아이디"
+				      onfocus="this.placeholder=''" onblur="this.placeholder='아이디'"><br>
+				      <input type="password" id="password" name="password" class="text-field" placeholder="비밀번호"
+				      onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호'">
 				      <input type="submit" value="로그인" class="submit-btn">
 				    </form>
+				    
 				    <div class="join">
 				      <a href="joinus">*회*원*가*입*</a>
 				    </div>
+				    <hr>
+					<c:if test="${not empty LoginID }">
+						&nbsp;&nbsp;<b>${LoginID}, ${LoginName}</b> 님 안녕하세요 ~~ <br>
+					</c:if>
+					<c:if test="${empty LoginID}">
+					&nbsp;&nbsp;=>로그인 후 이용하세요 ~~
+					</c:if>
 			    </div><!-- login-box  -->
 		 	  </div><!-- login-form  -->
 		  </div><!-- item -->
@@ -289,9 +300,9 @@
 		      		<tr height="30" bgcolor="#ffffff"><td>10</td></tr>
 		      	</table>
 			      	<div class="new_write">
-				      	<c:if test="${not empty LoginID}">
+				      	
 							&nbsp;&nbsp; <a href="write">글쓰기</a>
-						</c:if>
+				
 			      	</div>
 		      	</div><!-- 자유게시판  -->
 		      <div class="item" id="item_3">

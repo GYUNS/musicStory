@@ -8,8 +8,8 @@
 <title>글 작성하기</title>
 </head>
 <body>
-<h2> 글 작성 해보기</h2>
-<form	action ="binsert" method="get">
+<h2> Write</h2>
+<formaction ="binsert" method="get">
 <table>
 	<tr height="40"><td  bgcolor = "lightgreen">I D</td>
 		<td><input type="text" name="id" value="${LoginID}" readonly></td>
@@ -27,11 +27,10 @@
 	</tr>
 </table>
 </form>
-<c:if test="${not empty message }">
+<c:if test="${not empty message}">
 
 <b>=> ${message}</b>
 </c:if>
 &nbsp;&nbsp; <a href="main">HOME</a>
-&nbsp;&nbsp; <a href="main/#item_2">자유게시판</a>
 </body>
 </html>

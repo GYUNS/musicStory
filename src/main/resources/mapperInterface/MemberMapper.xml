@@ -7,4 +7,13 @@
 <insert id="insert">	
 	insert into member values(#{id},#{password},#{name},#{birth},#{gender})
 </insert>
+
+<select id="selectList" resultType="vo.MemberVO">
+	select id, password, name, birth, gender from member order by id
+</select>
+
+<select id="selectOne" resultType="vo.MemberVO">
+	select id, password, name,birth,gender from member where id=#{id}
+</select>
+
 </mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="mapperInterface.MBoardMapper">
+
+<insert id="insert">
+	<selectKey keyProperty="seq" resultType="int" order="BEFORE">
+		select IFNULL(max(seq),0)+1 from board
+	</selectKey>
+	insert into board(seq, title,id,content,root,step,indent)
+	values(#{seq}, #{title}, #{id}, #{content}, #{seq},0,0)
+</insert>
+
+<!-- Reply_Insert  -->
+<insert id="rinsert">
+	insert into board(title,id,content,root,step,indent)
+	values(#{title},#{id},#{content},#{root},#{step},#{indent})
+</insert>
+
+<update id="stepUpdate">
+	update board set step=step+1 where root=#{root} and step>=#{step}
+</update>
+
+<update id="update">
+	update board set title=#{title} ,content=#{content} where seq=#{seq}
+</update>
+
+<!-- if Tag 적용 -->
+
+<!-- if Tag 적용 -->
+<delete id="delete">
+   delete from board 
+   <if test="seq==root"> where root=#{seq} </if>
+   <!-- 원글 삭제 : 동일 root 는 모두 삭제 -->
+   <if test="seq!=root"> where seq=#{seq} </if>
+   <!-- 답글만 삭제 -->
+</delete>                      
+</mapper>

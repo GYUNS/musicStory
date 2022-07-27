@@ -7,4 +7,6 @@ public interface MemberService {
 	MemberVO selectOne(MemberVO vo);
 	
 	int insert(MemberVO vo);
+
 }
+
